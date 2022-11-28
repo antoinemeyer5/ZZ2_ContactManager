@@ -50,11 +50,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SocleApplicatif\SocleApplicatif.csproj">
-      <Project>{3DD81E57-A011-4E81-BC18-0DC1D80C7785}</Project>
-      <Name>SocleApplicatif</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

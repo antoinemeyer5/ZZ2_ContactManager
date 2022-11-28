@@ -104,12 +104,6 @@ namespace SocleApplicatif
             bool running = true;
             string[] input;
 
-            SerialisationBinaire sb = new SerialisationBinaire();
-            sb.yes();
-
-            CryptageReversible cr = new CryptageReversible();
-            cr.afficherChein();
-            
             while (running)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -127,15 +121,33 @@ namespace SocleApplicatif
                         break;
                     case "charger":
                         Console.WriteLine("TODO");
+                        // serialisation truc
                         break;
                     case "enregistrer":
                         Console.WriteLine("TODO");
+                        // cryptage truc
                         break;
                     case "ajouterdossier":
                         AjouterDossierDansStructureHierarchique(input, ListeDesDossiers, IdDossierCourant);
                         break;
                     case "ajoutercontact":
-                        Console.WriteLine("TODO");
+                        if (input.Length == 6)
+                        {
+                            // met le contact dans le dossier courrant
+                            Contact NouveauContact = new Contact(input[1], input[2], input[3], input[4], input[5]);
+                            ListeDesDossiers[IdDossierCourant - 1].AjouterContact(NouveauContact);
+
+                            
+
+                        }
+                        else if (input.Length == 7)
+                        {
+                            // met le contact dans le dossier choisi
+                        }
+                        else
+                        {
+                            Console.WriteLine("Mauvaise utilisation : problèmes d'arguments; taper 'help' pour obtenir le manuel.");
+                        }
                         break;
                     case "help":
                         AfficheMessagesErreurs();

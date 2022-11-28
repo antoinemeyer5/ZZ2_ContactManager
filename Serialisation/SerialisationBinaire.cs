@@ -8,15 +8,6 @@ namespace Serialisation
 {
     public class SerialisationBinaire
     {
-        private string oui;
-        public SerialisationBinaire()
-        {
-            oui = "salut";
-        }
-
-        public void yes()
-        {
-            Console.WriteLine(oui + " : super !");
-        }
+       
     }
 }

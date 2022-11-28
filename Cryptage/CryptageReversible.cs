@@ -8,16 +8,6 @@ namespace Cryptage
 {
     public class CryptageReversible
     {
-        private string NoN;
-
-        public CryptageReversible()
-        {
-            NoN = "petit chien";
-        } 
-
-        public void afficherChein()
-        {
-            Console.WriteLine("Oui, !!: " + NoN);
-        }
+        
     }
 }
