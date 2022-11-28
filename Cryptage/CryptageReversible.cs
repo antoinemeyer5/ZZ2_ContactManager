@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cryptage
 {
-    public class CryptageReversible
+    class CryptageReversible
     {
         
     }
