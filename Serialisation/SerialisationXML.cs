@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cryptage
+namespace Serialisation
 {
-    class Program
+    public class SerialisationXML
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

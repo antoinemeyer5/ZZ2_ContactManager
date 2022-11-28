@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocleApplicatif
+namespace Modele
 {
     public class Dossier
     {
