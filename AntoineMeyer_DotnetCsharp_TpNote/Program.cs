@@ -44,30 +44,31 @@ namespace AntoineMeyer_DotnetCsharp_TpNote
                         Console.WriteLine("TODO");
                         break;
                     case "ajouterdossier":
-                        
                         // TODO
                         // AFFICHER LA BONNE POSITION QUAND ON AJOUTE UN DOSSIER
-                        // AFFICHAGE POUR REPERR LE DOSSIER COURANT (DERNIER DOSSIER CREE)
-                        // OPTIMISER LE CODE
-                        // avant de convertir input[2] verifier que cest un int sinon exception ! 
 
-                        if ((input.Length == 3) && (Convert.ToInt32(input[2]) <= ListeDesDossiers.Count) && (0 < Convert.ToInt32(input[2])) )
-                        {
-                            Dossier NouveauDossier = new Dossier(input[1], ListeDesDossiers[Convert.ToInt32(input[2]) - 1].Id);
-                            ListeDesDossiers.Insert(Convert.ToInt32(input[2]), NouveauDossier);
-                            IdDossierCourant = NouveauDossier.Id;
-                          
-                            Console.WriteLine("Dossier '{0}' ajouté sous {1} en position {2}",
-                                input[1], ListeDesDossiers[Convert.ToInt32(input[2]) - 1].Nom, -1);
-                        } else if (input.Length == 2)
+                        if (input.Length == 2)
                         {
                             Dossier NouveauDossier = new Dossier(input[1], ListeDesDossiers[IdDossierCourant - 1].Id);
                             ListeDesDossiers.Insert(IdDossierCourant, NouveauDossier);
-                            
-                            Console.WriteLine("Dossier '{0}' ajouté sous {1} en position {2}",
-                                input[1], ListeDesDossiers[IdDossierCourant - 1].Nom, -1);
-                            
+                            Console.WriteLine("Dossier '{0}' ajouté sous {1} en position {2}", input[1], ListeDesDossiers[IdDossierCourant - 1].Nom, -1);
                             IdDossierCourant = NouveauDossier.Id;
+                        }
+                        else if ( input.Length == 3 )
+                        {
+                            int IdDossierDestination = 0;
+                            int.TryParse(input[2], out IdDossierDestination);
+                            if ((IdDossierDestination != 0) && (IdDossierDestination <= ListeDesDossiers.Count) && (0 < IdDossierDestination))
+                            {
+                                Dossier NouveauDossier = new Dossier(input[1], ListeDesDossiers[IdDossierDestination - 1].Id);
+                                ListeDesDossiers.Insert(IdDossierDestination, NouveauDossier);
+                                IdDossierCourant = NouveauDossier.Id;
+                                Console.WriteLine("Dossier '{0}' ajouté sous {1} en position {2}", input[1], ListeDesDossiers[IdDossierDestination - 1].Nom, -1);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Mauvaise utilisation : problème avec le 2ème paramètre; taper 'help' pour obtenir le manuel.");
+                            }
                         }
                         else
                         {
