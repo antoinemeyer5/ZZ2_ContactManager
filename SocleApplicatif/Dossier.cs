@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AntoineMeyer_DotnetCsharp_TpNote
+namespace SocleApplicatif
 {
-    class Dossier
+    public class Dossier
     {
         public string Nom { get; set; }
         private DateTime DateDeCreation;

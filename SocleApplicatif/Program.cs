@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AntoineMeyer_DotnetCsharp_TpNote
+namespace SocleApplicatif
 {
     class Program
     {
@@ -11,7 +11,7 @@ namespace AntoineMeyer_DotnetCsharp_TpNote
             int IdDossierCourant = 1;
             Dossier root = new Dossier("Root", 0);
             ListeDesDossiers.Add(root);
-            
+
             bool running = true;
             string[] input;
 
@@ -30,9 +30,9 @@ namespace AntoineMeyer_DotnetCsharp_TpNote
                     case "afficher":
                         foreach (Dossier parent in ListeDesDossiers)
                         {
-                            for(int i = 0; i < parent.ParentId; i++)
+                            for (int i = 0; i < parent.ParentId; i++)
                             {
-                                Console.Write(" ");    
+                                Console.Write(" ");
                             }
                             parent.AfficherDossier();
                         }
@@ -51,7 +51,7 @@ namespace AntoineMeyer_DotnetCsharp_TpNote
                             Console.WriteLine("Dossier '{0}' ajouté sous {1} en position {2}", input[1], ListeDesDossiers[IdDossierCourant - 1].Nom, 1);
                             IdDossierCourant = NouveauDossier.Id;
                         }
-                        else if ( input.Length == 3 )
+                        else if (input.Length == 3)
                         {
                             int IdDossierDestination = 0;
                             int.TryParse(input[2], out IdDossierDestination);
@@ -121,7 +121,7 @@ namespace AntoineMeyer_DotnetCsharp_TpNote
                 }
             }
 
-    
+
         }
     }
 }

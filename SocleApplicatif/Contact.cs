@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AntoineMeyer_DotnetCsharp_TpNote
+namespace SocleApplicatif
 {
-    class Contact
+    public class Contact
     {
         private string Nom;
         private string Prenom;
