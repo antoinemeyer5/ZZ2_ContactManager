@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Modele
 {
+    [Serializable]
     public class Dossier
     {
         public string Nom { get; set; }
@@ -35,11 +36,16 @@ namespace Modele
             string Resultat = String.Format(
                 "[D] {0} (création {1}) - [Id:{2}][ParentId:{3}]",
                 Nom, DateDeCreation, Id, ParentId);
-            Console.WriteLine(Resultat);
             foreach (Contact contact in ListeDesContacts)
             {
-                contact.AfficherContact();
+                Resultat = Resultat + '\n';
+                for (int i = 0; i < this.ParentId; i++)
+                {
+                    Resultat = Resultat + " ";
+                }
+                Resultat = Resultat + contact.AfficherContact();
             }
+            Console.WriteLine(Resultat);
         }
     }
 }

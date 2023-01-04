@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Modele
 {
+    [Serializable]
     public class Contact
     {
         private string Nom;
@@ -40,12 +41,12 @@ namespace Modele
             DateDeModification = DateDeCreation;
         }
 
-        public void AfficherContact()
+        public string AfficherContact()
         {
             string Resultat = String.Format(
                 "| [C] {0}, {1} ({2}), Email:{3}, Link:{4}",
                 Prenom, Nom, Societe, Courriel, Lien);
-            Console.WriteLine(Resultat);
+            return Resultat;
         }
 
         public void AfficherCompletementContact()
