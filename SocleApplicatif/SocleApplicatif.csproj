@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegexUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -54,13 +55,13 @@
       <Project>{684BA287-7815-45AB-9E1F-4A7DFF8CDDCA}</Project>
       <Name>Cryptage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modele\Modele.csproj">
-      <Project>{695B058B-7647-413E-B58F-741AA7716C39}</Project>
-      <Name>Modele</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Serialisation\Serialisation.csproj">
       <Project>{4A065687-90D8-4ADB-9FBC-AF92879CEDBB}</Project>
       <Name>Serialisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{8b367549-c6e4-4ae9-be32-1ba9ba23b1dd}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
