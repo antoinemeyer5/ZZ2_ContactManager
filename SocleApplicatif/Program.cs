@@ -3,6 +3,8 @@ using Modele;
 using Serialisation;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using Utilities;
 
 namespace SocleApplicatif
 {
@@ -98,14 +100,31 @@ namespace SocleApplicatif
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("  Désérialise et charge une hiérarchie.");
             Console.WriteLine("  Paramètres : [string]");
-            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml' et 'binaire'");
+            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml', 'binaire' et 'chiffrage'");
+            Console.WriteLine("                Si vous utilisez 'chiffrage', il faut ajouter une clé de déchiffrage.");
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n- enregistrer :");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("  Sérialise et enregistrer la hiérarchie dans l'état courant.");
             Console.WriteLine("  Paramètres : [string]");
-            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml' et 'binaire'");
+            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml', 'binaire' et 'chiffrage'");
+            Console.WriteLine("                Si vous utilisez 'chiffrage', il faut ajouter une clé de chiffrage.");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n  Exemple 1 :");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("  >enregistrer xml");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("  Enregistrement du fichier 'C:\\Users\\anmeyer2\\Documents\\ContactManager.xml'");
+            Console.WriteLine("  Fichier 'C:\\Users\\anmeyer2\\Documents\\ContactManager.xml' enregistré.");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n  Exemple 2 :");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("  >enregistrer chiffrage 123456789");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("  Fichier 'cryptaSeri_anmeyer2.dat' chiffré et enregistré.");
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("\n- help : ");
@@ -211,6 +230,14 @@ namespace SocleApplicatif
 
         static void Main(string[] args)
         {
+            /*NEW*/
+            /*
+            List<NoeudGeneral> newFolderList = new List<NoeudGeneral>();
+            int currentFolderId = 1;
+            NoeudGeneral newRoot = new Dossier("Root", 0);
+            newFolderList.Add(newRoot);
+            */
+            /*NEW*/
             List<Dossier> ListeDesDossiers = new List<Dossier>();
             int IdDossierCourant = 1;
             Dossier root = new Dossier("Root", 0);
@@ -246,12 +273,31 @@ namespace SocleApplicatif
                             switch (input[1])
                             {
                                 case "xml":
-                                    Console.WriteLine("todo");
+                                    serialisation_type = factory.GetSerialisation("XML");
+                                    ListeDesDossiers = serialisation_type.UndoTheSerialisation();
+                                    IdDossierCourant = 1;
                                     break;
                                 case "binaire":
                                     serialisation_type = factory.GetSerialisation("Binary");
                                     ListeDesDossiers = serialisation_type.UndoTheSerialisation();
                                     IdDossierCourant = 1;
+                                    break;
+                                default:
+                                    Console.WriteLine("Méthode de chargement/désérialisation inconnue.");
+                                    break;
+                            }
+                        }
+                        // case cryptage with CryptoStream and key
+                        else if (input.Length == 3)
+                        {
+                            switch (input[1])
+                            {
+                                case "chiffrage":
+                                    CryptageReversible cr = new CryptageReversible();
+                                    Console.WriteLine("input 0 =" + input[0]);
+                                    Console.WriteLine("input 1 =" + input[1]);
+                                    Console.WriteLine("input 2 =" + input[2]);
+                                    ListeDesDossiers = cr.DecryptionSerialisation(Encoding.ASCII.GetBytes(input[2]));
                                     break;
                                 default:
                                     Console.WriteLine("Méthode de chargement/désérialisation inconnue.");
@@ -272,11 +318,26 @@ namespace SocleApplicatif
                             switch (input[1])
                             {
                                 case "xml":
-                                    Console.WriteLine("todo");
+                                    serialisation_type = factory.GetSerialisation("XML");
+                                    serialisation_type.DoTheSerialisation(ListeDesDossiers);
                                     break;
                                 case "binaire":
                                     serialisation_type = factory.GetSerialisation("Binary");
                                     serialisation_type.DoTheSerialisation(ListeDesDossiers);
+                                    break;
+                                default:
+                                    Console.WriteLine("Méthode d'enregistrement/sérialisation inconnue.");
+                                    break;
+                            }
+                        }
+                        // case descryptage with CryptoStream and key
+                        else if (input.Length == 3)
+                        {
+                            switch (input[1])
+                            {
+                                case "chiffrage":
+                                    CryptageReversible cr = new CryptageReversible();
+                                    cr.CryptageSerialisation(ListeDesDossiers, Encoding.ASCII.GetBytes(input[2]));
                                     break;
                                 default:
                                     Console.WriteLine("Méthode d'enregistrement/sérialisation inconnue.");
