@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities;
 
 namespace Modele
 {
@@ -26,7 +27,6 @@ namespace Modele
         public Contact(string p, string n, string s, string c, string l)
         {
             Prenom = p;
-            Nom = n;
             Societe = s;
             Courriel = c;
             if ( Enum.IsDefined(typeof(EnumerationLien), l) )

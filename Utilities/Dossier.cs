@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Utilities;
 
 namespace Modele
 {
@@ -15,6 +16,16 @@ namespace Modele
         public static int CompteurDossier;
         public int Id { get; }
 
+        public Dossier()
+        {
+            Nom = "void";
+            DateDeCreation = DateTime.Now;
+            DateDeModification = DateDeCreation;
+            ListeDesContacts = new List<Contact>();
+            ParentId = 0; // root = 0
+            CompteurDossier++;
+            Id = CompteurDossier;
+        }
         public Dossier(string n, int pi)
         {
             Nom = n;
