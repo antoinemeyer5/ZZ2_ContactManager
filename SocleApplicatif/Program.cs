@@ -100,19 +100,14 @@ namespace SocleApplicatif
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("  Désérialise et charge une hiérarchie.");
             Console.WriteLine("  Paramètres : [string]");
-<<<<<<< HEAD
             Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml', 'binaire' et 'chiffrage'");
             Console.WriteLine("                Si vous utilisez 'chiffrage', il faut ajouter une clé de déchiffrage.");
-=======
-            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml' et 'binaire'");
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("\n- enregistrer :");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("  Sérialise et enregistrer la hiérarchie dans l'état courant.");
             Console.WriteLine("  Paramètres : [string]");
-<<<<<<< HEAD
             Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml', 'binaire' et 'chiffrage'");
             Console.WriteLine("                Si vous utilisez 'chiffrage', il faut ajouter une clé de chiffrage.");
 
@@ -136,15 +131,6 @@ namespace SocleApplicatif
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Affiche le manuel des commandes.");
 
-=======
-            Console.WriteLine("  -> [string] = type de sérialisation au choix entre 'xml' et 'binaire'");
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write("\n- help : ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Affiche le manuel des commandes.");
-
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("\n- sortir : ");
             Console.ForegroundColor = ConsoleColor.White;
@@ -288,12 +274,8 @@ namespace SocleApplicatif
                             {
                                 case "xml":
                                     serialisation_type = factory.GetSerialisation("XML");
-<<<<<<< HEAD
                                     ListeDesDossiers = serialisation_type.UndoTheSerialisation();
                                     IdDossierCourant = 1;
-=======
-                                    Console.WriteLine("todo");
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
                                     break;
                                 case "binaire":
                                     serialisation_type = factory.GetSerialisation("Binary");
@@ -304,7 +286,6 @@ namespace SocleApplicatif
                                     Console.WriteLine("Méthode de chargement/désérialisation inconnue.");
                                     break;
                             }
-<<<<<<< HEAD
                         }
                         // case cryptage with CryptoStream and key
                         else if (input.Length == 3)
@@ -322,8 +303,6 @@ namespace SocleApplicatif
                                     Console.WriteLine("Méthode de chargement/désérialisation inconnue.");
                                     break;
                             }
-=======
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
                         }
                         else
                         {
@@ -340,11 +319,7 @@ namespace SocleApplicatif
                             {
                                 case "xml":
                                     serialisation_type = factory.GetSerialisation("XML");
-<<<<<<< HEAD
                                     serialisation_type.DoTheSerialisation(ListeDesDossiers);
-=======
-                                    Console.WriteLine("todo");
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
                                     break;
                                 case "binaire":
                                     serialisation_type = factory.GetSerialisation("Binary");
@@ -355,7 +330,6 @@ namespace SocleApplicatif
                                     break;
                             }
                         }
-<<<<<<< HEAD
                         // case descryptage with CryptoStream and key
                         else if (input.Length == 3)
                         {
@@ -370,8 +344,6 @@ namespace SocleApplicatif
                                     break;
                             }
                         }
-=======
->>>>>>> 21eb8362710ee8bd2cd9b428fb040a7614af29f2
                         else
                         {
                             Console.WriteLine("Mauvaise utilisation : taper 'help' pour obtenir le manuel.");
