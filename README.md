@@ -8,6 +8,8 @@
 
 **Résumé :** Réaliser une application qui fait une gestion de contacts. L'application est en trois grandes parties : le socle applicatif, la gestion de la persistance des données et la protection par chiffrage de ces données.
 
+**GitFlow:** J'ai travaillé et versionné mon travail avec la technologie Git et l'outil GitHub. J'ai réalisé des `Issues` afin de cadrer mon travail.
+
 ---
 
 -> présentation de ma solution
