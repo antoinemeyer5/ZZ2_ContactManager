@@ -37,7 +37,7 @@ IV. [Chiffrage](#chiffrage)
 
 ---
 
-## Présentation pour le rendu
+## I. Présentation pour le rendu
 
 ### Ma solution
 
@@ -77,7 +77,7 @@ todo
 
 ---
 
-## Socle applicatif
+## II. Socle applicatif
 
 ### Description
 
@@ -105,7 +105,7 @@ Tous les points initiaux du sujet ont été réalisé ainsi que les points pour 
 
 ---
 
-## Sérialisation
+## III. Sérialisation
 
 ### Description
 
@@ -121,7 +121,7 @@ todo
 
 ---
 
-## Chiffrage
+## IV. Chiffrage
 
 ### Description
 
