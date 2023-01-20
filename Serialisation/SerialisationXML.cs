@@ -31,19 +31,26 @@ namespace Serialisation
             */
             XmlSerializer xs = new XmlSerializer(typeof(List<Dossier>));
             string pathToSave = "C:\\Users\\" + userName + "\\Documents\\ContactManager.xml";
-            FileStream fsout = new FileStream(pathToSave, FileMode.Create, FileAccess.Write, FileShare.None);
-            Console.WriteLine("Enregistrement du fichier '" + pathToSave + "'");
             try
             {
-                using (fsout)
+                FileStream fsout = new FileStream(pathToSave, FileMode.Create, FileAccess.Write, FileShare.None);
+                Console.WriteLine("Enregistrement du fichier '" + pathToSave + "'");
+                try
                 {
-                    xs.Serialize(fsout, listeDossiers);
-                    Console.WriteLine("Fichier '" + pathToSave + "' enregistré.");
+                    using (fsout)
+                    {
+                        xs.Serialize(fsout, listeDossiers);
+                        Console.WriteLine("Fichier '" + pathToSave + "' enregistré.");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Une erreur s'est produite ...");
                 }
             }
             catch
             {
-                Console.WriteLine("Une erreur s'est produite ...");
+                Console.WriteLine("Impossible d'enregistrer en XML");
             }
         }
 
@@ -52,19 +59,26 @@ namespace Serialisation
             List<Dossier> response = new List<Dossier>();
             XmlSerializer xs = new XmlSerializer(typeof(List<Dossier>));
             string pathToSave = "C:\\Users\\" + userName + "\\Documents\\ContactManager.xml";
-            FileStream fsin = new FileStream(pathToSave, FileMode.Open, FileAccess.Read, FileShare.None);
-            Console.WriteLine("Chargement du fichier '" + pathToSave + "'");
             try
             {
-                using (fsin)
+                FileStream fsin = new FileStream(pathToSave, FileMode.Open, FileAccess.Read, FileShare.None);
+                Console.WriteLine("Chargement du fichier '" + pathToSave + "'");
+                try
                 {
-                    response = (List<Dossier>)xs.Deserialize(fsin);
-                    Console.WriteLine("Fichier '" + pathToSave + "' chargé.");
+                    using (fsin)
+                    {
+                        response = (List<Dossier>)xs.Deserialize(fsin);
+                        Console.WriteLine("Fichier '" + pathToSave + "' chargé.");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Une erreur s'est produite ...");
                 }
             }
             catch
             {
-                Console.WriteLine("Une erreur s'est produite ...");
+                Console.WriteLine("Impossible de charger en XML");
             }
             return response;
         }

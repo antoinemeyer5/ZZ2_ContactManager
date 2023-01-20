@@ -19,19 +19,27 @@ namespace Serialisation
         {
             BinaryFormatter bf = new BinaryFormatter();
             string pathToSave = "C:\\Users\\" + userName + "\\Documents\\ContactManager.binary";
-            FileStream fsout = new FileStream(pathToSave, FileMode.Create, FileAccess.Write, FileShare.None);
-            Console.WriteLine("Enregistrement du fichier '"+ pathToSave +"'");
+
             try
             {
-                using (fsout)
+                FileStream fsout = new FileStream(pathToSave, FileMode.Create, FileAccess.Write, FileShare.None);
+                Console.WriteLine("Enregistrement du fichier '" + pathToSave + "'");
+                try
                 {
-                    bf.Serialize(fsout, listeDossiers);
-                    Console.WriteLine("Fichier '" + pathToSave + "' enregistré.");
+                    using (fsout)
+                    {
+                        bf.Serialize(fsout, listeDossiers);
+                        Console.WriteLine("Fichier '" + pathToSave + "' enregistré.");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Une erreur s'est produite ...");
                 }
             }
             catch
             {
-                Console.WriteLine("Une erreur s'est produite ...");
+                Console.WriteLine("Impossible d'enregistrer en binaire");
             }
         }
 
@@ -40,19 +48,27 @@ namespace Serialisation
             List<Dossier> response = new List<Dossier>();
             BinaryFormatter bf = new BinaryFormatter();
             string pathToSave = "C:\\Users\\" + userName + "\\Documents\\ContactManager.binary";
-            FileStream fsin = new FileStream(pathToSave, FileMode.Open, FileAccess.Read, FileShare.None);
-            Console.WriteLine("Chargement du fichier '" + pathToSave + "'");
+
             try
             {
-                using (fsin)
+                FileStream fsin = new FileStream(pathToSave, FileMode.Open, FileAccess.Read, FileShare.None);
+                Console.WriteLine("Chargement du fichier '" + pathToSave + "'");
+                try
                 {
-                    response = (List<Dossier>)bf.Deserialize(fsin);
-                    Console.WriteLine("Fichier '" + pathToSave + "' chargé.");
+                    using (fsin)
+                    {
+                        response = (List<Dossier>)bf.Deserialize(fsin);
+                        Console.WriteLine("Fichier '" + pathToSave + "' chargé.");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Une erreur s'est produite ...");
                 }
             }
             catch
             {
-                Console.WriteLine("Une erreur s'est produite ...");
+                Console.WriteLine("Impossible de charger en binaire");
             }
             return response;
         }
