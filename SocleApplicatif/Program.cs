@@ -293,9 +293,6 @@ namespace SocleApplicatif
                             {
                                 case "chiffrage":
                                     CryptageReversible cr = new CryptageReversible();
-                                    Console.WriteLine("input 0 =" + input[0]);
-                                    Console.WriteLine("input 1 =" + input[1]);
-                                    Console.WriteLine("input 2 =" + input[2]);
                                     ListeDesDossiers = cr.DecryptionSerialisation(Encoding.ASCII.GetBytes(input[2]));
                                     break;
                                 default:
