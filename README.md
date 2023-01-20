@@ -34,6 +34,10 @@ IV. [Chiffrage](#chiffrage)
 
 ### Ma solution
 
+```bash
+    Taper 'help' pour obtenir le manuel.
+```
+
 Ma solution a quatre projets :
 
 1. Cryptage
