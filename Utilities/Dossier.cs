@@ -44,8 +44,8 @@ namespace Utilities
         public void AfficherDossier()
         {
             string Resultat = String.Format(
-                "[D] {0} (création {1}) - [Id:{2}][ParentId:{3}]",
-                Nom, DateDeCreation, Id, ParentId);
+                "[D] {0} (création {1})",
+                Nom, DateDeCreation);
             foreach (Contact contact in ListeDesContacts)
             {
                 Resultat = Resultat + '\n';
