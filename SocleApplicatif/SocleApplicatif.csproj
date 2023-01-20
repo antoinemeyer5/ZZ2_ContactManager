@@ -52,11 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cryptage\Cryptage.csproj">
-      <Project>{684BA287-7815-45AB-9E1F-4A7DFF8CDDCA}</Project>
+      <Project>{684ba287-7815-45ab-9e1f-4a7dff8cddca}</Project>
       <Name>Cryptage</Name>
     </ProjectReference>
     <ProjectReference Include="..\Serialisation\Serialisation.csproj">
-      <Project>{4A065687-90D8-4ADB-9FBC-AF92879CEDBB}</Project>
+      <Project>{4a065687-90d8-4adb-9fbc-af92879cedbb}</Project>
       <Name>Serialisation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">

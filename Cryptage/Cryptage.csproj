@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{8B367549-C6E4-4AE9-BE32-1BA9BA23B1DD}</Project>
+      <Project>{8b367549-c6e4-4ae9-be32-1ba9ba23b1dd}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>

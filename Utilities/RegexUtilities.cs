@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace SocleApplicatif
+namespace Utilities
 {
     class RegexUtilities
     {

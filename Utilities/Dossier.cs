@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Utilities;
 
-namespace Modele
+namespace Utilities
 {
     [Serializable]
     public class Dossier

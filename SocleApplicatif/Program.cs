@@ -1,10 +1,9 @@
 ﻿using Cryptage;
-using Modele;
+using Utilities;
 using Serialisation;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Utilities;
 
 namespace SocleApplicatif
 {
