@@ -15,25 +15,16 @@
 ## Sommaire
 
 I. [Présentation pour le rendu](#présentation-pour-le-rendu)
-1. [Ma solution](#ma-solution)
-2. [Mes choix techniques](#mes-choix-techniques)
-3. [Mes problèmes rencontrés ](#mes-problèmes-rencontrés)
-4. [Ma résolution des problèmes](#ma-résolution-des-problèmes)
+1. [Ma solution](#ma-solution) 2. [Mes choix techniques](#mes-choix-techniques) 3. [Mes problèmes rencontrés ](#mes-problèmes-rencontrés) 4. [Ma résolution des problèmes](#ma-résolution-des-problèmes)
 
 II. [Socle applicatif](#socle-applicatif)
-1. [Description](#description)
-2. [Points réalisés](#points-réalisés)
-3. [Points intéréssants](#points-intéréssants)
+1. [Description](#description) 2. [Points réalisés](#points-réalisés) 3. [Points intéréssants](#points-intéréssants)
 
 III. [Sérialisation](#sérialisation)
-1. [Description](#description-1)
-2. [Points réalisés](#points-rc3a9alisc3a9s-1)
-3. [Points intéréssants](#points-intc3a9rc3a9ssants-1)
+1. [Description](#description-1) 2. [Points réalisés](#points-réalisés-1) 3. [Points intéréssants](#points-intéréssants-1)
 
 IV. [Chiffrage](#chiffrage)
-1. [Description](#description-2)
-2. [Points réalisés](#points-rc3a9alisc3a9s-2)
-3. [Points intéréssants](#points-intc3a9rc3a9ssants-2)
+1. [Description](#description-2) 2. [Points réalisés](#points-réalisés-2) 3. [Points intéréssants](#points-intéréssants-2)
 
 ---
 
