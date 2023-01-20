@@ -14,6 +14,8 @@
 
 ## Sommaire
 
+=> [Exemple d'exécution](#exemple-dexécution)
+
 I. [Présentation pour le rendu](#présentation-pour-le-rendu)
 1. [Ma solution](#ma-solution) 2. [Mes choix techniques](#mes-choix-techniques) 3. [Mes problèmes rencontrés ](#mes-problèmes-rencontrés) 4. [Ma résolution des problèmes](#ma-résolution-des-problèmes)
 
@@ -36,15 +38,15 @@ Ma solution a quatre projets :
 
 1. Cryptage
 
-Réalise la protection du contenu par chiffrage. Plus de détails [ici](#chiffrage).
+Réalise la protection du contenu par chiffrage. Plus de détails : [ici](#chiffrage)
 
 2. Serialisation
 
-Réalise la gestion de la persistance par sérialisation binaire et XML. Plus de détails [ici](#sérialisation). 
+Réalise la gestion de la persistance par sérialisation binaire et XML. Plus de détails : [ici](#sérialisation)
 
 3. SocleApplicatif
 
-Le programme principal à exécuter se trouve dans ce projet : c'est le `main`. Il utilise les autres projets pour créer la solution globale. Plus de détails [ici](#socle-applicatif).
+Le programme principal à exécuter se trouve dans ce projet : c'est le `main`. Il utilise les autres projets pour créer la solution globale. Plus de détails : [ici](#socle-applicatif)
 
 4. Utilities
 
@@ -64,7 +66,11 @@ En second point vient la **recherche de documentation**. Beaucoup de notions ét
 
 ### Ma résolution des problèmes
 
-todo
+Du temps, de la résilience, la BU (Bibliothèque Universitaire) et l'utilisation de Google ou autres moteurs de recherche en ligne.
+
+### Exemple d'exécution
+
+![Exemple_Execution](./Screenshots/exemple_execution.PNG)
 
 ---
 
@@ -82,7 +88,11 @@ Tous les points initiaux du sujet ont été réalisé ainsi que les points pour 
 
 * un affichage pour toute la structure
 
+    ![Afficher](./Screenshots/command_afficher.PNG)
+
 * une gestion des dossiers et des contacts
+
+    ![AjouterDossier](./Screenshots/command_ajouterdossier.PNG)
 
 * la gestion du format d'adresse mail
 
@@ -90,9 +100,13 @@ Tous les points initiaux du sujet ont été réalisé ainsi que les points pour 
 
 ### Points intéréssants
 
--> screenshoot de mon switch dans ma fonction main
+* Switch dans la fonction main
 
--> screenshoot de ma commande help
+    ![Switch_Command](./Screenshots/switch_command.PNG)
+
+* Ma commande help
+
+    ![Command_Help](./Screenshots/command_help.PNG)
 
 ---
 
@@ -104,12 +118,25 @@ Gestion de la persistance par sérialisation binaire et XML
 
 ### Points réalisés
 
--> utilisation d'un patron de conception
+Tous les points initiaux du sujet ont été réalisé. J'ai fait les deux premiers points sur trois du "pour aller plus loin". Ma solution nommée `Serialisation` :
+
+* Patron de conception Factory
+
+    ![Patron_Factory](./Screenshots/serialisation_pattern.PNG)
 
 ### Points intéréssants
 
-todo
+* L'interface IFactory
 
+    ![InterfaceIFactory](./Screenshots/interface_IFactory.PNG)
+
+* Chargement avec XML
+
+    ![ChargementXML](./Screenshots/xml_charger.PNG)
+
+* Enregistrement avec XML
+
+    ![EnregistrementXML](./Screenshots/xml_enregistrer_sdd.PNG)
 ---
 
 ## Chiffrage
@@ -118,12 +145,13 @@ todo
 
 Protection du contenu par chiffrage
 
--> chiffrage avec AES, choix personnel
-
 ### Points réalisés
 
-todo
+Tous les points initiaux du sujet ont été réalisé. Je n'ai pas fait le point "pour aller plus loin".
 
 ### Points intéréssants
 
-todo
+* Chiffrage avec AES
+
+    ![ChiffrageAES](./Screenshots/chiffrage_AES.PNG)
+
